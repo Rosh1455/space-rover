@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Web App Interface</title>
+    <link rel="stylesheet" href="ro.css">
+    <script>
+        // Force landscape orientation on mobile devices
+        window.addEventListener("load", function() {
+            if (window.innerWidth < window.innerHeight) {
+                alert("Please rotate your device to landscape mode for the best experience.");
+            }
+        });
+        window.addEventListener("orientationchange", function() {
+            if (window.orientation !== 90 && window.orientation !== -90) {
+                alert("Please rotate your device to landscape mode for the best experience.");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="videoSection">
+            <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div id="controlPanel">
+            <div id="joystick"></div>
+            <div id="map">Map</div>
+            <div id="sliders">
+                <input type="range" class="slider" min="0" max="100">
+                <input type="range" class="slider" min="0" max="100">
+                <input type="range" class="slider" min="0" max="100">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.8.3/nipplejs.min.js"></script>
+    <script src="r.js"></script>
+</body>
+</html>
